@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles-country-searcher.css">
+    <title>Country Searcher</title>
+</head>
+<body>
+<div class="content-container">
+    <h1>Let's search some countries</h1>
+    <figure>
+        <img src="assets/globe.gif" alt="world-globe">
+    </figure>
+    <form onsubmit="" id="form">
+        <input id="search-field" type="text" placeholder="Bijvoorbeeld Nederland of Peru" name="country">
+        <button id="search-field-button" type="submit">Zoek</button>
+    </form>
+    <p id="error"></p>
+    <section class="country-details-container" id="country-details-container">
+<!--        <div class="card"></div>-->
+    </section>
+</div>
+<script type="module" src="country-searcher.js"></script>
+</body>
+</html>

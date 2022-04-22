@@ -38,7 +38,7 @@ async function fetchCountries(e) {
                     </li>
                     `;
         })
-    } catch {
+    } catch(e) {
         console.error(e);
     }
 }
