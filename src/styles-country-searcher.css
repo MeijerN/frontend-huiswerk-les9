@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Yantramanav:wght@100;300;400&display=swap');
+
+/*General styling*/
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    /*border: solid red 2px;*/
+}
+
+/*Fonts*/
+
+body, #search-field, #search-field-button {
+    font-family: 'Yantramanav', sans-serif, Arial, Verdana;
+    font-weight: 300;
+}
+
+h1 {
+    font-family: 'Gochi Hand', cursive, Arial, Verdana;
+    font-size: 48px;
+}
+
+h2 {
+    font-family: 'Gochi Hand', cursive, Arial, Verdana;
+    font-size: 28px;
+}
+
+
+/*Areas*/
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 630px;
+    flex-shrink: 0;
+    min-height: 800px;
+    /*border: solid orange 2px;*/
+}
+
+.content-container figure {
+    display: flex;
+    max-width: 90%;
+    /*border: solid purple 1px;*/
+}
+
+img {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    min-width: 330px;
+    /*border: solid red 1px;*/
+}
+
+
+#search-field {
+    width: 100%;
+    padding: 5px;
+    border: solid gray 1px;
+    border-radius: 5px 0 0 5px;
+    border-right-color: #bedc72;
+    margin: 0;
+}
+
+#search-field-button {
+    border: transparent;
+    background-color: #bedc72;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #5e5e5e;
+    border-radius: 0 5px 5px 0;
+    padding: 0 12px 0 12px;
+}
+
+.country-details-container {
+    display: flex;
+    min-width: 90%;
+    /*border: solid lightblue 1px;*/
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    margin-top: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.12);
+    /*border: solid lightcoral 1px;*/
+}
+
+hr {
+    border: solid lightgrey 1px;
+    margin: 5px;
+}
+
+.card h2 {
+    margin: 5px;
+}
+
+.card p {
+    font-weight: 400;
+    margin: 5px;
+}
+
+#error {
+    font-style: italic;
+    margin: 5px;
+    min-height: 21px;
+    color: red;
+}
