@@ -32,19 +32,15 @@ function makeCurrencyString(currencies, capital) {
 }
 
 function makeLanguagesString(languages) {
-    if (languages.length === 1) {
+    const languagesArray = languages.map((language) => {
+        return language.name;
+    })
+    if (languagesArray.length === 1) {
         return `<p>They speak ${languages[0].name}</p>`
     } else {
         let languagesString = '';
-        for (let i = 0; i < languages.length; i++) {
-            if (i === 0) {
-                languagesString += `${languages[i].name}`;
-            } else if (i === (languages.length - 1)) {
-                languagesString += ` and ${languages[i].name}`;
-            } else {
-                languagesString += `, ${languages[i].name}`;
-            }
-        }
+        languagesString = languagesArray.slice(0, languagesArray.length -1 ).join(", ");
+        languagesString += ` and ${languagesArray[languagesArray.length - 1]}`;
         return `<p>They speak ${languagesString}</p>`
     }
 }
@@ -99,9 +95,6 @@ test.addEventListener('submit', (e) => {
     // Prevents page refresh
     e.preventDefault();
 
-    // Collect user input from search field
-    const userInput = document.getElementById('search-field').value;
-
     // Call main function with user input
-    searchCountry(userInput);
+    searchCountry(e.target[0].value);
 })

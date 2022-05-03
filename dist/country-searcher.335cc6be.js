@@ -486,14 +486,14 @@ function makeCurrencyString(currencies, capital) {
     else return `<p>The capital is ${capital} and you can pay with ${currencies[0].name} and ${currencies[1].name}</p>`;
 }
 function makeLanguagesString(languages) {
-    if (languages.length === 1) return `<p>They speak ${languages[0].name}</p>`;
+    const languagesArray = languages.map((language)=>{
+        return language.name;
+    });
+    if (languagesArray.length === 1) return `<p>They speak ${languages[0].name}</p>`;
     else {
         let languagesString = '';
-        for(let i = 0; i < languages.length; i++){
-            if (i === 0) languagesString += `${languages[i].name}`;
-            else if (i === languages.length - 1) languagesString += ` and ${languages[i].name}`;
-            else languagesString += `, ${languages[i].name}`;
-        }
+        languagesString = languagesArray.slice(0, languagesArray.length - 1).join(", ");
+        languagesString += ` and ${languagesArray[languagesArray.length - 1]}`;
         return `<p>They speak ${languagesString}</p>`;
     }
 }
@@ -537,10 +537,8 @@ const test = document.getElementById('form');
 test.addEventListener('submit', (e)=>{
     // Prevents page refresh
     e.preventDefault();
-    // Collect user input from search field
-    const userInput = document.getElementById('search-field').value;
     // Call main function with user input
-    searchCountry(userInput);
+    searchCountry(e.target[0].value);
 });
 
 },{"axios":"1IeuP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1IeuP":[function(require,module,exports) {
